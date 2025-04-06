@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report, confusion_matrix
@@ -49,6 +49,18 @@ print(confusion_matrix(y_test, y_pred))
 X_scaled = scaler.fit_transform(dependent_variables)
 cv_scores = cross_val_score(knn_model, X_scaled, independent_variable, cv=5, scoring='accuracy')
 formatted_scores = [f"{score:.2f}" for score in cv_scores]
-print("\nCross-Validation SCores:", formatted_scores)
+
+# Display Cross-Validation results
+print("\nCross-Validation Scores:", formatted_scores)
 print(f"Mean Accuracy: {cv_scores.mean():.2f}")
 print(f"Standard Deviation: {cv_scores.std():.2f}")
+
+# Hyperparameter Tuning
+param_grid = {'n_neighbors': list(range(1, 20))}
+grid_search = GridSearchCV(KNeighborsClassifier(), param_grid, cv=5, scoring='accuracy')
+grid_search.fit(X_scaled, independent_variable)
+
+# Display Hyperparameter Tuning results
+print("\nGrid Search Results:")
+print(f"Best k (n_neighbors): {grid_search.best_params_['n_neighbors']}")
+print(f"Best Cross-Validation Accuracy: {grid_search.best_score_:.2f}")
