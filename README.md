@@ -15,7 +15,7 @@ This project is a complete AI/ML solution for classifying iris flowers based on 
 
 ---
 
-## 🛠Technologies Used
+## Technologies Used
 
 - **Python**
 - **pandas**
