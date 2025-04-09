@@ -51,6 +51,13 @@ python knn_model.py
 ```
 3. View printed evaluation metrics in the console
 
+---
+
+## Reflections
+- One future improvement I would focus on is exploring additional classifiers like SVM or Random Forests to directly compare efficiency for this dataset.
+
+---
+
 ## Author
 Created by: Hunter J Linton
 
