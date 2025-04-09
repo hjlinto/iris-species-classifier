@@ -1,36 +1,57 @@
+# Iris Species Classifier (KNN)
+
+This project is a complete AI/ML solution for classifying iris flowers based on their physical features. Built using the classic Iris dataset, the model applies the K-Nearest Neighbors (KNN) algorithm, including full preprocessing, model training, evaluation, cross-validation, and hyperparameter tuning.
+
+---
+
+## Features
+
+- Loads and processes the Iris dataset
+- Applies feature scaling and train-test splitting
+- Trains a KNN classifier for species prediction
+- Evaluates model performance using multiple metrics
+- Applies cross-validation to assess generalization
+- Optimizes model with hyperparameter tuning (GridSearchCV)
+
+---
+
+## 🛠Technologies Used
+
+- **Python**
+- **pandas**
+- **scikit-learn**
+- **StandardScaler**
+- **KNeighborsClassifier**
+- **GridSearchCV**
+
+---
+
 ## Requirements
 
-### Software:
 - Python 3.10+
-- Pip (Python package installer)
-- Required Python libraries:
-  - pandas
-  - numpy
-  - scikit-learn
-  - matplotlib (optional, for visualization)
+- pandas
+- scikit-learn
+- numpy
 
-### Hardware:
-- Basic PC or laptop with:
-  - At least 4 GB of RAM
-  - 200 MB free disk space
-- Tested on: Windows 11 (should also work on Mac/Linux)
+Install dependencies using:
 
-## Instructions to Run
+```bash
+pip install pandas scikit-learn numpy
+```
 
-1. **Clone the repository:**
+## How to Run
 
-2. **Place the Iris dataset file (`Iris.csv`) in the root folder.**
+1. Clone the repository:
+```bash
+git clone https://github.com/hjlinto/iris-species-classifier.git
+```
+2. Run the program:
+```bash
+python knn_model.py
+```
+3. View printed evaluation metrics in the console
 
-3. **Run the Python script:**
+## Author
+Created by: Hunter J Linton
 
-If you're using the full model training + evaluation file, this will:
-
-- Load the dataset
-- Train a k-Nearest Neighbors model
-- Evaluate performance (accuracy, precision, recall, F1)
-- Perform cross-validation
-- Tune hyperparameters (`k`) using GridSearchCV
-- Output final metrics to the console
-
-4. Review results printed in the terminal or console.
 
